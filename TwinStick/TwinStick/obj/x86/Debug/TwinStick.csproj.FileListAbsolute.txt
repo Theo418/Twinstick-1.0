@@ -1,0 +1,234 @@
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\black.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\SquareEnemy.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\glowbox.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Black.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\SquareEnemy.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\glowbox.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Dan\Desktop\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Desktop\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Dan\Desktop\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Dan\Desktop\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\planet.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\planet.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Dan\Desktop\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titlescreen.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\planet.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titlescreen.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\planet.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titlescreen.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\planet.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titlescreen.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe.manifest
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.application
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.exe
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\TwinStick.pdb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.csprojResolveAssemblyReference.cache
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe.manifest
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\BloomCombine.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\BloomExtract.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\GaussianBlur.xnb
+C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\whiteBorder.xnb

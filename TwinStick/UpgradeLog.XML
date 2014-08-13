@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="TwinStick">
+</Property><Property Name="Solution File" Value="D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick.sln">
+</Property><Property Name="User Options File" Value="D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick.suo">
+</Property><Property Name="Date" Value="Tuesday, August 07, 2012">
+</Property><Property Name="Time" Value="13:57 PM">
+</Property><Property Name="Solution" Value="TwinStick">
+</Property><Property Name="Solution File" Value="D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick.sln">
+</Property><Property Name="Date" Value="Tuesday, August 07, 2012">
+</Property><Property Name="Time" Value="13:57:03 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="TwinStick.sln" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick.sln">
+</Event><Event ErrorLevel="0" Project="" Source="TwinStick.suo" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick.suo">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick.csproj" Description="Upgraded XNA Game Studio project to XNA Framework 4.0.">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick.csproj" Description="Project file successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\TwinStick.csproj">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick.csproj.user" Description="Project user file successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\TwinStick.csproj.user">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\EnemyAndBullet.cs" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\EnemyAndBullet.cs">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\Program.cs" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\Program.cs">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\MainClass.cs" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\MainClass.cs">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick_TemporaryKey.pfx" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\TwinStick_TemporaryKey.pfx">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\Game.ico" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\Game.ico">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\GameThumbnail.png" Description="File successfully backed up as D:\Windows.old.000\Users\Dan\Documents\TwinStick\Backup\TwinStick\GameThumbnail.png">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TwinStick" Source="TwinStick\TwinStick.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TwinStick.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="TwinStick.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="TwinStick" Source="TwinStick\TwinStick.csproj" Description="Upgraded XNA Framework references to XNA Framework 4.0.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Background.jpg" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="bluebox.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="bullet.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="cyanbox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Duck.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="greenbox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="grunt.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Laser.wav" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="orangebox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="planet.jpg" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Purplebox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="purpleishbox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="redbox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Rocket.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Ship.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Ship2.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Ship3.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="star.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="titan explosion.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="titan2.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="titlescreen.jpg" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="vomitbox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Wanderer.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="yellowbox.PNG" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Content.contentproj" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Laser.mp3" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Laser.wav" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Music.mp3" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="Music2.mp3" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="spawn.mp3" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content.contentproj" Source="SpriteFont1.spritefont" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="TwinStickContent" Source="TwinStick\Content\TwinStickContent.contentproj" Description="Upgraded XNA Game Studio nested content projects to XNA Framework 4.0 and promoted to sibling project.">
+</Event></UpgradeLog>

@@ -1,0 +1,18 @@
+Enemy Types - 8 or 10 
+PowerUp Graphics
+
+
+
+Programming
+   Enemy Types
+      Wanderer - Bounce off walls, arc the trajectory?
+      Rockets - Back and forth
+
+   Particles
+      Ship Trail
+      Bullet Death
+      
+   Bullet Trajectory
+
+   Geoms
+

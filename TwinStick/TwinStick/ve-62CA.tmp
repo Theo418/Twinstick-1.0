@@ -1,0 +1,736 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
+using System.Collections;
+
+namespace TwinStick
+{
+    public class MainClass : Microsoft.Xna.Framework.Game
+    {
+        //Variables
+        #region
+        GraphicsDeviceManager graphics;
+        SpriteBatch spriteBatch;
+
+        int screenHeight;
+        int screenWidth;
+     
+        //Border
+        Rectangle leftSide;
+        Rectangle topSide;
+        Rectangle rightSide;
+        Rectangle bottomSide;
+        Vector2 leftSideLoc;
+        Vector2 rightSideLoc;
+        Vector2 topSideLoc;
+        Vector2 bottomSideLoc;
+
+        //Ship
+        Texture2D shipTexture;
+        Vector2 shipLoc;
+        Vector2 shipSpeed;
+        float shipAccelSpeed;
+        int shipSize;
+        float maxShipSpeed;
+
+        //Input
+        Vector2 leftStick;
+        float leftStickAngle;
+        float rightStickAngle;
+        
+        //Firing
+        Boolean canFire;
+        int fireTime;
+        int fireFrequency;
+        ArrayList bulletList;
+        double rightStickDegrees;
+
+        //Chaser Enemy
+        Texture2D chaserEnemyTexture;
+        ArrayList chaserList;
+         
+        //Sound
+        Song myBackgroundMusic;
+        SoundEffect bulletSoundEffect;
+        SoundEffect spawnEffect;
+
+        //Spawn
+        int spawnTimer;
+        int enemySpawnLevel;
+
+        Vector2 planetPos;
+
+        ArrayList particleList;
+        ArrayList starList;
+        ArrayList duckList;
+        ArrayList rocketList;
+        Texture2D spriteTexture;
+        Texture2D bulletTexture;
+        Texture2D starTexture;
+        Texture2D blueBoxTexture;
+        Texture2D duckTexture;
+        Texture2D worldTexture;
+        Texture2D redBoxTexture;
+        Texture2D rocketTexture;
+        
+        Boolean xThreeSixty = true;
+        SpriteFont font1;
+        Vector2 scorePos;
+        int score;
+
+        #endregion
+
+        public MainClass()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
+           // this.graphics.IsFullScreen = true;
+            Content.RootDirectory = "Content";
+        }
+
+        protected override void Initialize()
+        {           
+            screenWidth = graphics.PreferredBackBufferWidth;
+            screenHeight = graphics.PreferredBackBufferHeight;
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            initializeLoc();
+
+            particleList = new ArrayList();
+            bulletList = new ArrayList();
+            starList = new ArrayList();
+            chaserList = new ArrayList();
+            duckList = new ArrayList();
+            rocketList = new ArrayList();
+
+            //Ship Texture and Information
+            shipAccelSpeed = 1.2f;
+            shipSize = 25;
+            maxShipSpeed = 7;
+           
+            //Bullets
+            fireTime = 10;
+            fireFrequency = 7;
+            canFire = true;
+            base.Initialize();         
+
+            //Spawn
+            spawnTimer = 400;
+            enemySpawnLevel = 5;
+
+            planetPos = new Vector2(0, 0);
+
+            Random rand = new Random();
+            int starX;
+            int starY;
+            int starDepth;
+            for (int i = 0; i < 100; i++)
+            {
+                starX = rand.Next(1600);
+                starY = rand.Next(1000);
+                starDepth = rand.Next(8);
+                Star s = new Star(new Vector2(starX, starY), starDepth);
+                starList.Add(s);
+            }
+
+            score = 0;
+        }
+
+        protected override void LoadContent()
+        {
+            myBackgroundMusic = Content.Load<Song>("Music2");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(myBackgroundMusic);
+
+            bulletSoundEffect = Content.Load<SoundEffect>("Laser");
+            spawnEffect = Content.Load<SoundEffect>("spawn");
+
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteTexture = Content.Load<Texture2D>(@"gfx/Purplebox");
+            bulletTexture = Content.Load<Texture2D>(@"gfx/bullet");
+            starTexture = Content.Load<Texture2D>(@"gfx/Star");
+            blueBoxTexture = Content.Load<Texture2D>(@"gfx/bluebox");
+            duckTexture = Content.Load<Texture2D>(@"gfx/Duck");
+            chaserEnemyTexture = Content.Load<Texture2D>(@"gfx/Wanderer");
+            shipTexture = Content.Load<Texture2D>(@"gfx/Ship3");
+            worldTexture = Content.Load<Texture2D>(@"gfx/planet");
+            redBoxTexture = Content.Load<Texture2D>(@"gfx/redbox");
+            rocketTexture = Content.Load<Texture2D>(@"gfx/titan2");
+
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            font1 = Content.Load<SpriteFont>("SpriteFont1");
+            scorePos = new Vector2(screenWidth - 100, screenHeight + 100);
+        }
+
+        protected override void UnloadContent()
+        {
+
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
+            GamePadState padState1 = GamePad.GetState(PlayerIndex.One);
+            KeyboardState keyState = Keyboard.GetState();
+
+            //Ship Movement, Angle
+            #region
+            if (padState1.ThumbSticks.Left.X > 0.0f || padState1.ThumbSticks.Left.X < 0.0f ||
+                padState1.ThumbSticks.Left.Y > 0.0f || padState1.ThumbSticks.Left.Y < 0.0f)
+            {
+                leftStick = padState1.ThumbSticks.Left;
+                leftStickAngle = (float)Math.Atan2(-leftStick.Y, leftStick.X);           
+            }
+            if (padState1.ThumbSticks.Left.X > 0.00f)
+                shipSpeed.X += padState1.ThumbSticks.Left.X * shipAccelSpeed;
+            if (padState1.ThumbSticks.Left.X < -0.00f)
+                shipSpeed.X += padState1.ThumbSticks.Left.X * shipAccelSpeed;
+            if (padState1.ThumbSticks.Left.Y > 0.00f)
+                shipSpeed.Y -= padState1.ThumbSticks.Left.Y * shipAccelSpeed;
+            if (padState1.ThumbSticks.Left.Y < -0.00f)
+                shipSpeed.Y -= padState1.ThumbSticks.Left.Y * shipAccelSpeed;        
+            if (keyState.IsKeyDown(Keys.W))
+                shipSpeed.Y -= shipAccelSpeed;
+            if (keyState.IsKeyDown(Keys.A))
+                shipSpeed.X -= shipAccelSpeed;
+            if (keyState.IsKeyDown(Keys.S))
+                shipSpeed.Y += shipAccelSpeed;
+            if (keyState.IsKeyDown(Keys.D))
+                shipSpeed.X += shipAccelSpeed;
+
+            float diagSpeed = (shipSpeed.X * shipSpeed.X) + (shipSpeed.Y * shipSpeed.Y);
+            if (diagSpeed > (maxShipSpeed * maxShipSpeed))
+            {
+                float xNeg = shipSpeed.X;
+                float yNeg = shipSpeed.Y;
+                shipSpeed.X = (float)Math.Sqrt((shipSpeed.X * shipSpeed.X * maxShipSpeed * maxShipSpeed) / diagSpeed);
+                shipSpeed.Y = (float)Math.Sqrt((shipSpeed.Y * shipSpeed.Y * maxShipSpeed * maxShipSpeed) / diagSpeed);
+                if (xNeg < 0)
+                    shipSpeed.X *= -1;
+                if (yNeg < 0)
+                    shipSpeed.Y *= -1;
+            }
+
+            //Border Collision  
+            Boolean updateLocX = true;
+            Boolean updateLocY = true;
+            if (shipLoc.X < shipSize + leftSideLoc.X)
+            {
+                if(shipSpeed.X < 0)
+                updateLocX = false;  
+            }
+            if (shipLoc.X > rightSideLoc.X - shipSize)
+            {
+                if(shipSpeed.X > 0)
+                updateLocX = false;
+            }
+            if (shipLoc.Y < topSideLoc.Y + shipSize)
+            {
+                if(shipSpeed.Y < 0)
+                updateLocY = false;
+            }
+            if (shipLoc.Y > bottomSideLoc.Y - shipSize)
+            {
+                if(shipSpeed.Y > 0)
+                updateLocY = false;
+            }
+            if (updateLocX)
+            {
+                shipLoc.X += (float)(shipSpeed.X / 1.5);
+                leftSideLoc.X += -shipSpeed.X / 2;
+                rightSideLoc.X += -shipSpeed.X / 2;               
+                topSideLoc.X += -shipSpeed.X / 2; 
+                bottomSideLoc.X += -shipSpeed.X / 2;     
+            }
+            else 
+                shipSpeed.X = 0;
+            if (updateLocY)
+            {
+                shipLoc.Y += (float)(shipSpeed.Y / 1.5);
+                leftSideLoc.Y += -shipSpeed.Y / 2;
+                rightSideLoc.Y += -shipSpeed.Y / 2;
+                topSideLoc.Y += -shipSpeed.Y / 2;
+                bottomSideLoc.Y += -shipSpeed.Y / 2;
+            }
+            else
+                shipSpeed.Y = 0;
+
+            //Momentum
+            shipSpeed.X *= (float).935;
+            shipSpeed.Y *= (float).935;
+            #endregion
+
+            //Bullet Creation
+            #region
+
+            rightStickAngle = (float)Math.Atan2(-padState1.ThumbSticks.Right.Y, padState1.ThumbSticks.Right.X);
+            rightStickDegrees = -rightStickAngle * (180 / Math.PI);
+            /*if(keyState.IsKeyDown(Keys.Left) || keyState.IsKeyDown(Keys.Right) ||
+                keyState.IsKeyDown(Keys.Down) || keyState.IsKeyDown(Keys.Up))*/
+            if(padState1.ThumbSticks.Right.X > 0.00f || padState1.ThumbSticks.Right.X < -0.00f ||
+                padState1.ThumbSticks.Right.Y > 0.00f || padState1.ThumbSticks.Right.Y < -0.00f)
+            {
+                if (canFire)
+                {
+                    Vector2 direction = padState1.ThumbSticks.Right;
+                    if (xThreeSixty == false)
+                    {
+                        int shotX = 0;
+                        int shotY = 0;
+                        if (keyState.IsKeyDown(Keys.Left))
+                            shotX = -1;
+                        if (keyState.IsKeyDown(Keys.Right))
+                            shotX = 1;
+                        if (keyState.IsKeyDown(Keys.Down))
+                            shotY = -1;
+                        if (keyState.IsKeyDown(Keys.Up))
+                            shotY = 1;
+                        direction.X = shotX;
+                        direction.Y = shotY;
+                    }
+
+                   
+                    Vector2 bulletLoc;
+                    Vector2 direction2;
+                    bulletLoc.X = shipLoc.X;
+                    bulletLoc.Y = shipLoc.Y - 10;
+                    bulletList.Add(new Bullet(bulletLoc, direction, rightStickAngle, 400));
+                    float vLength = (float)Math.Sqrt((direction.X * direction.X) + (direction.Y * direction.Y));
+                    if (xThreeSixty)
+                    {   //Spread Shot                 
+                        double angleUp = rightStickAngle + .04;
+                        direction2.X = (float)Math.Cos(angleUp) * vLength;
+                        direction2.Y = (float)Math.Sin(angleUp) * -vLength;
+                        bulletList.Add(new Bullet(bulletLoc, direction2, angleUp, 300));
+                        double angleDown = rightStickAngle - .04;
+                        direction2.X = (float)Math.Cos(angleDown) * vLength;
+                        direction2.Y = (float)Math.Sin(angleDown) * -vLength;
+                        bulletList.Add(new Bullet(bulletLoc, direction2, angleDown, 300));
+                    }
+
+                    canFire = false;
+                    bulletSoundEffect.Play();
+                }
+            }
+
+            fireTime++;
+            if (fireTime > fireFrequency)
+            {
+                canFire = true;
+                fireTime = 0;
+            }
+            #endregion
+
+            //Bullet Collisions
+            #region
+            for (int i = 0; i < bulletList.Count; i++)
+            {
+                Bullet b = (Bullet)bulletList[i];
+                if (b.location.X < leftSideLoc.X || b.location.X > rightSideLoc.X || 
+                    b.location.Y < topSideLoc.Y || b.location.Y > bottomSideLoc.Y)
+                {
+                    bulletList.RemoveAt(i);
+                }
+
+                for (int k = 0; k < chaserList.Count; k++ )
+                {
+                     Chaser c = (Chaser)chaserList[k];
+                     Rectangle rect1 = new Rectangle((int)b.location.X, (int)b.location.Y, 25, 25);
+                     Rectangle rect2 = new Rectangle((int)c.position.X, (int)c.position.Y, 55, 55);
+                     if (rect1.Intersects(rect2))
+                     {
+                         generateEffect(new Vector2(c.position.X, c.position.Y), spriteTexture);
+                         chaserList.RemoveAt(k);
+                         b.alive = false;
+                     }
+                }
+                foreach (Duck d in duckList)
+                {
+                    Rectangle rect1 = new Rectangle((int)d.position.X, (int)d.position.Y, 55, 55);
+                    Rectangle rect2 = new Rectangle((int)b.location.X, (int)b.location.Y, 40, 40);
+                    if (rect1.Intersects(rect2))
+                    {
+                        generateEffect(new Vector2(d.position.X, d.position.Y), redBoxTexture);
+                        d.position = new Vector2(15000, 15000);
+                        b.alive = false;
+                    }
+                }
+
+                foreach (Rocket r in rocketList)
+                {
+                    Rectangle rect1 = new Rectangle((int)r.position.X, (int)r.position.Y, 55, 55);
+                    Rectangle rect2 = new Rectangle((int)b.location.X, (int)b.location.Y, 40, 40);
+                    if (rect1.Intersects(rect2))
+                    {
+                        generateEffect(new Vector2(r.position.X, r.position.Y), redBoxTexture);
+                        b.alive = false;
+                        r.alive = false;
+                    }
+                }
+                b.update();
+            }
+            #endregion
+
+            //Spawn
+            #region
+            if (spawnTimer % 140 == 0)
+            {
+                Random r = new Random();
+                for (int y = 0; y < enemySpawnLevel; y++)
+                {
+                    //spawnEffect.Play();
+                    int RandX = r.Next(screenWidth);
+                    int RandY = r.Next(screenHeight);
+                    if(RandX > shipLoc.X + 250 || RandX < shipLoc.X - 250)
+                        if (RandY > shipLoc.Y + 250 || RandY < shipLoc.Y - 250)
+                            if(RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 &&
+                                RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30)
+                        {
+                            chaserList.Add(new Chaser(new Vector2(RandX, RandY)));
+                        }
+
+                }
+
+                for (int y = 0; y < enemySpawnLevel/4; y++)
+                {
+                    //spawnEffect.Play();
+                    int RandX = r.Next(screenWidth);
+                    int RandY = r.Next(screenHeight);
+                    if (RandX > shipLoc.X + 150 || RandX < shipLoc.X - 150)
+                        if (RandY > shipLoc.Y + 150 || RandY < shipLoc.Y - 150)
+                            if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 &&
+                                RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30)
+                            {
+                                Duck d = new Duck(new Vector2(RandX, RandY));
+                                duckList.Add(d);
+                            }
+
+                }
+
+                for (int y = 0; y < enemySpawnLevel/4; y++)
+                {
+                    int RandX = r.Next(screenWidth) + (int)leftSideLoc.X - 50;
+                    int RandY = 50;
+                    int RandB = r.Next(2);
+                    Boolean vertical = true;
+                    if (RandB == 1)
+                    {
+                        vertical = false;
+                        RandX = 10;
+                        RandY = (int)topSideLoc.Y + r.Next(screenHeight) - 50;
+                    }
+
+                    if(RandX > shipLoc.X + 250 || RandX < shipLoc.X - 250)
+                        if (RandY > shipLoc.Y + 250 || RandY < shipLoc.Y - 250)
+                            if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 &&
+                                RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30)
+                            {
+                                rocketList.Add(new Rocket(new Vector2(RandX, RandY), vertical));
+                            }
+                }
+            }
+            spawnTimer++;
+            if (spawnTimer > 700)
+            {
+                enemySpawnLevel += 10;
+                spawnTimer = 0;
+            }
+            #endregion
+
+            //Hit Detection(Death)
+            #region
+            foreach (Chaser c in chaserList)
+            {
+                Rectangle rect1 = new Rectangle((int)shipLoc.X, (int)shipLoc.Y, 50, 50);
+                Rectangle rect2 = new Rectangle((int)c.position.X, (int)c.position.Y, 20, 20);
+                if (rect1.Intersects(rect2))
+                {
+                    clearBlockList();
+                    initializeLoc();
+                    break;
+                }
+            }
+            foreach (Duck d in duckList)
+            {
+                Rectangle rect1 = new Rectangle((int)shipLoc.X, (int)shipLoc.Y, 50, 50);
+                Rectangle rect2 = new Rectangle((int)d.position.X, (int)d.position.Y, 20, 20);
+                if (rect1.Intersects(rect2))
+                {
+                    clearBlockList();
+                    initializeLoc();
+                    break;
+                }
+            }
+            foreach (Rocket r in rocketList)
+            {
+                Rectangle rect1 = new Rectangle((int)shipLoc.X, (int)shipLoc.Y, 50, 50);
+                Rectangle rect2 = new Rectangle((int)r.position.X, (int)r.position.Y, 20, 20);
+                if (rect1.Intersects(rect2))
+                {
+                    clearBlockList();
+                    initializeLoc();
+                    break;
+                }
+            }
+            #endregion
+
+            //Location Updates
+            #region
+            foreach (Chaser c in chaserList)
+            {
+                c.update(shipLoc, shipSpeed);
+            }
+            foreach (Duck d in duckList)
+            {
+                d.rotate();
+                d.update(leftSideLoc.X, topSideLoc.Y, rightSide.X, bottomSide.Y);
+                float x = d.position.X - shipSpeed.X/2;
+                float y = d.position.Y - shipSpeed.Y/2;
+                d.position = new Vector2(x, y);
+            }
+            foreach (Rocket r in rocketList)
+            {
+                r.update(shipSpeed, leftSideLoc, topSideLoc, rightSideLoc, bottomSideLoc);
+            }
+            foreach (Star s in starList)
+            {
+                s.update(shipSpeed);
+            }
+
+            for(int i = 0; i < bulletList.Count; i++)
+            {
+                Bullet b = (Bullet)bulletList[i];
+                if (b.alive == false)
+                {
+                    bulletList.RemoveAt(i);
+                }
+            }
+            for (int i = 0; i < rocketList.Count; i++)
+            {
+                Rocket r = (Rocket)rocketList[i];
+                if (r.alive == false)
+                {
+                    rocketList.RemoveAt(i);
+                }
+            }
+           
+            updateParticles();
+            //Border
+            leftSide = new Rectangle((int)leftSideLoc.X, (int)leftSideLoc.Y, 3, screenHeight + 150);
+            rightSide = new Rectangle((int)rightSideLoc.X, (int)rightSideLoc.Y, 3, screenHeight + 150);
+            topSide = new Rectangle((int)topSideLoc.X, (int)topSideLoc.Y, screenWidth + 20, 3);
+            bottomSide = new Rectangle((int)bottomSideLoc.X, (int)bottomSideLoc.Y, screenWidth + 20, 3);
+            #endregion
+
+            planetPos.X -= shipSpeed.X / 12;
+            planetPos.Y -= shipSpeed.Y / 12;
+
+            base.Update(gameTime);
+        }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend);
+            //Draw Star
+            foreach (Star s in starList)
+            {
+                spriteBatch.Draw(starTexture, new Rectangle((int)s.getScrollSpeed().X, (int)s.getScrollSpeed().Y, 3, 3), Color.White);
+            }
+            spriteBatch.Draw(worldTexture, new Rectangle((int)planetPos.X, (int)planetPos.Y, (int)(340 * .75), (int)(450 * .75)), Color.White);
+
+            //Draw Block Enemies
+            foreach (Chaser c in chaserList)
+            {
+                spriteBatch.Draw(chaserEnemyTexture, new Rectangle((int)c.position.X, (int)c.position.Y, 55, 55), null, Color.White, c.rotation, new Vector2(50, 50), SpriteEffects.None, 1);
+            }
+
+            //Draw Ducks
+            foreach (Duck d in duckList)
+            {
+                spriteBatch.Draw(duckTexture, new Rectangle((int)d.position.X, (int)d.position.Y, 55, 55), null, Color.White, d.rotation, new Vector2(50, 50), SpriteEffects.None, 1);
+            }
+
+            //Draw Rockets
+            foreach (Rocket r in rocketList)
+            {
+                spriteBatch.Draw(rocketTexture, new Rectangle((int)r.position.X, (int)r.position.Y, 45, 45), Color.White);
+            }
+
+            //Draw Bullets
+            foreach (Bullet b in bulletList)
+            {
+                spriteBatch.Draw(bulletTexture, new Rectangle((int)b.location.X, (int)b.location.Y, 25, 25), null, Color.White, (float)b.angle, new Vector2(38, 38), SpriteEffects.None, 1);
+            }
+
+            //Draw Ship
+            spriteBatch.Draw(shipTexture, new Rectangle((int)shipLoc.X, (int)shipLoc.Y, 55, 55), null, Color.White, leftStickAngle, new Vector2(50, 50), SpriteEffects.None, 1);
+
+            //Particles
+            foreach (ParticleObject p in particleList)
+            {
+                spriteBatch.Draw(p.texture, new Rectangle((int)p.getLocation().X, (int)p.getLocation().Y, 5, 10), null, new Color(255, 255, 255, (byte)p.transparency), p.rotation, new Vector2(5, 5), SpriteEffects.None, 1);
+            }
+
+            //Score
+            string scoreStr = score.ToString();
+            spriteBatch.DrawString(font1, scoreStr, scorePos, Color.LightGreen);
+
+            //Draw Border
+            spriteBatch.Draw(blueBoxTexture, leftSide, Color.White);
+            spriteBatch.Draw(blueBoxTexture, rightSide, Color.White);
+            spriteBatch.Draw(blueBoxTexture, topSide, Color.White);
+            spriteBatch.Draw(blueBoxTexture, bottomSide, Color.White);
+
+            int outerEdge = 7;
+            spriteBatch.Draw(blueBoxTexture, new Rectangle((int)leftSideLoc.X - outerEdge, (int)leftSideLoc.Y - outerEdge, 3, screenHeight + 150 + 2 * outerEdge), Color.White);
+            spriteBatch.Draw(blueBoxTexture, new Rectangle((int)rightSideLoc.X + outerEdge, (int)rightSideLoc.Y - outerEdge, 3, screenHeight + 150 + 2 * outerEdge), Color.White);
+            spriteBatch.Draw(blueBoxTexture, new Rectangle((int)topSideLoc.X - outerEdge, (int)topSideLoc.Y - outerEdge, screenWidth + 20 + 2 * outerEdge, 3), Color.White);
+            spriteBatch.Draw(blueBoxTexture, new Rectangle((int)bottomSideLoc.X - outerEdge, (int)bottomSideLoc.Y + outerEdge, screenWidth + 20 + 2 * outerEdge, 3), Color.White);
+
+            spriteBatch.End();
+            base.Draw(gameTime);
+        }
+
+        protected void clearBlockList()
+        {
+            foreach (Chaser c in chaserList)
+            {
+                generateEffect(new Vector2(c.position.X, c.position.Y), spriteTexture);
+            }
+            foreach (Duck d in duckList)
+            {
+                generateEffect(new Vector2(d.position.X, d.position.Y), redBoxTexture);
+            }
+            foreach (Rocket r in rocketList)
+            {
+                generateEffect(new Vector2(r.position.X, r.position.Y), redBoxTexture);
+            }
+            int temp = chaserList.Count;
+            for (int f = 0; f < temp; f++)
+            {
+                chaserList.RemoveAt(0);
+            }
+            temp = duckList.Count;
+            for (int i = 0; i < temp; i++)
+            { 
+                duckList.RemoveAt(0);
+            }
+            temp = rocketList.Count;
+            for (int i = 0; i < temp; i++)
+            {
+                rocketList.RemoveAt(0);
+            }
+        }
+
+        protected void initializeLoc()
+        {
+            //Borders
+            leftSideLoc.X = -10;
+            leftSideLoc.Y = -75;
+            rightSideLoc.X = screenWidth + 10;
+            rightSideLoc.Y = -75;
+            topSideLoc.X = -10;
+            topSideLoc.Y = -75;
+            bottomSideLoc.X = -10;
+            bottomSideLoc.Y = screenHeight + 75;
+
+            //Clean this up
+            leftSide = new Rectangle((int)leftSideLoc.X, (int)leftSideLoc.Y, 3, screenHeight + 150);
+            rightSide = new Rectangle((int)rightSideLoc.X, (int)rightSideLoc.Y, 3, screenHeight + 150);
+            topSide = new Rectangle((int)topSideLoc.X, (int)topSideLoc.Y, screenWidth + 20, 3);
+            bottomSide = new Rectangle((int)bottomSideLoc.X, (int)bottomSideLoc.Y, screenWidth + 20, 3);
+
+            shipLoc.X = screenWidth / 2;
+            shipLoc.Y = screenHeight / 2;
+            shipSpeed.X = 0;
+            shipSpeed.Y = 0;
+        }
+
+        protected void generateEffect(Vector2 loc, Texture2D tex)
+        {
+            Random r = new Random();
+            int numOfP = r.Next(160) + 40;
+
+           for (int j = 0; j < numOfP; j++)
+            {
+                ParticleObject particle;
+                particle = new ParticleObject(tex);
+                particle.setLocation(new Vector2(loc.X, loc.Y));
+                int x = r.Next(78);
+                double realX = (float) ((x*.12));
+                int y = r.Next(78);
+                double realY = (float) ((y *.12));
+                double maxDist = 90;// (.01 * r.Next(400)) + 40;
+                Boolean create = false;
+                if (realX * realX + realY * realY < maxDist)
+                {
+                    create = true;
+                }
+
+                int isNeg = r.Next(2);
+                if (isNeg == 0)
+                    realX *= -1;
+                int isNeg2 = r.Next(2);
+                if (isNeg2 == 0)
+                    realY *= -1;
+
+                particle.direction = (new Vector2((float)realX, (float)realY));
+
+                particle.rotation = (float)Math.Atan2(realY, realX) - (float)(Math.PI / 2);
+               if(create)
+                particleList.Add(particle);
+            }
+        }
+
+        protected void updateParticles()
+        {
+            for (int i = 0; i < particleList.Count; i++)
+            {
+                ParticleObject p = (ParticleObject)particleList[i];
+                float x = p.getLocation().X + p.direction.X - shipSpeed.X /2 ;
+                float y = p.getLocation().Y + p.direction.Y - shipSpeed.Y / 2;
+                /*if (x < leftSideLoc.X)
+                {
+                    p.setDirection(new Vector2(p.getDirection().X * -1, p.getDirection().Y));
+                    x = leftSideLoc.X + 3;
+                }
+                if (x > rightSideLoc.X)
+                {
+                    p.setDirection(new Vector2(p.getDirection().X * -1, p.getDirection().Y));
+                    x = rightSideLoc.X - 1;
+                }
+                if (y < topSideLoc.Y)
+                {
+                    p.setDirection(new Vector2(p.getDirection().X, p.getDirection().Y * -1));
+                    y = topSideLoc.Y + 3;
+                }
+                if (y > bottomSideLoc.Y)
+                {
+                    p.setDirection(new Vector2(p.getDirection().X, p.getDirection().Y * -1));
+                    y = bottomSideLoc.Y - 1;
+                }*/
+                p.updateSpeed();
+                p.setLocation(new Vector2(x, y));
+                int life = p.getLifeSpan();
+                if (p.getLifeSpan() < 0)
+                {
+                    particleList.RemoveAt(i);
+                }
+
+            }
+        }
+
+    }
+}

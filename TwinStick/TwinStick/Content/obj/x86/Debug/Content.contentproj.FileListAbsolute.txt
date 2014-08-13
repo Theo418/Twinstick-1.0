@@ -1,0 +1,5 @@
+C:\Users\Dan\Documents\Visual Studio 2008\Projects\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Downloads\TwinStick\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\New folder\TwinStick\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Desktop\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\My Dropbox\Public\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
