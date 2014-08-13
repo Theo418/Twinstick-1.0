@@ -1,6 +1,3 @@
-Content\Music.xnb
-Content\Music2.xnb
-Content\spawn.xnb
 Content\gfx\Wanderer.xnb
 Content\gfx\bluebox.xnb
 Content\gfx\Ship.xnb
@@ -9,7 +6,6 @@ Content\gfx\Star.xnb
 Content\gfx\Purplebox.xnb
 Content\gfx\Duck.xnb
 Content\gfx\greenbox.xnb
-Content\gfx\planet.xnb
 Content\gfx\redbox.xnb
 Content\gfx\Background.xnb
 Content\gfx\Ship2.xnb
@@ -18,11 +14,10 @@ Content\gfx\grunt.xnb
 Content\gfx\Ship3.xnb
 Content\gfx\titan2.xnb
 Content\gfx\titlescreen.xnb
+Content\gfx\whiteBorder.xnb
 Content\Laser.xnb
+Content\spawn.xnb
 Content\SpriteFont1.xnb
 Content\Shaders\BloomCombine.xnb
 Content\Shaders\BloomExtract.xnb
 Content\Shaders\GaussianBlur.xnb
-Content\gfx\whiteBorder.xnb
-Content\Music.wma
-Content\Music2.wma

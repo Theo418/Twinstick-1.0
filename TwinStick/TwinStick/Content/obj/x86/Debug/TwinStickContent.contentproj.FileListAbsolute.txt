@@ -1,3 +1,4 @@
 D:\Windows.old.000\Users\Dan\Documents\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Dan\Dropbox\Games\TwinStick\TwinStick\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\Content\obj\x86\Debug\TwinStickContent.contentprojResolveAssemblyReference.cache
+C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\Content\obj\x86\Debug\TwinStickContent.contentprojResolveAssemblyReference.cache

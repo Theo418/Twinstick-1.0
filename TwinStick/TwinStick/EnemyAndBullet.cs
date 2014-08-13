@@ -29,7 +29,7 @@ namespace TwinStick {
         public Ship() {
             shipAccelSpeed = 1.2f;
             shipSize = 25;
-            maxShipSpeed = 6;
+            maxShipSpeed = 8;
             fireTime = 10;
             fireFrequency = 6;
             canFire = true;

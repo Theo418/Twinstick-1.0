@@ -55,20 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Music.mp3">
-      <Name>Music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Music2.mp3">
-      <Name>Music2</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="gfx\Wanderer.PNG">
       <Name>Wanderer</Name>
       <Importer>TextureImporter</Importer>
@@ -123,13 +109,6 @@
   <ItemGroup>
     <Compile Include="gfx\greenbox.PNG">
       <Name>greenbox</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="gfx\planet.jpg">
-      <Name>planet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -31,7 +31,7 @@ namespace TwinStick {
         Vector2 bottomSideLoc;
         //Ship
         Texture2D shipTexture;
-        
+
         //Input
         GamePadState oldPadState1;
         KeyboardState oldKeyState;
@@ -41,7 +41,7 @@ namespace TwinStick {
         int selectorLocation = 0;
 
         ArrayList bulletList;
-        
+
 
         ArrayList enemyList;
         //Sound
@@ -83,34 +83,30 @@ namespace TwinStick {
 
         public MainClass() {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferHeight = 544;
-            graphics.PreferredBackBufferWidth = 960;
+            graphics.PreferredBackBufferHeight = 1080; // 544;
+            graphics.PreferredBackBufferWidth = 1920; // 960;
             this.graphics.IsFullScreen = false;
             Content.RootDirectory = "Content";
             bloom = new BloomComponent(this);
             Components.Add(bloom);
-           bloom.Settings = new BloomSettings(null, 0.25f, 4, 2, 1, 1.5f, 1);
+            bloom.Settings = new BloomSettings(null, 0.25f, 4, 2, 1, 1.5f, 1);
         }
 
         protected override void Initialize() {
             state = 0;
             screenWidth = graphics.PreferredBackBufferWidth;
             screenHeight = graphics.PreferredBackBufferHeight;
-            spriteBatch = new SpriteBatch(GraphicsDevice); 
+            spriteBatch = new SpriteBatch(GraphicsDevice);
             particleList = new ArrayList();
             bulletList = new ArrayList();
             enemyList = new ArrayList();
             multiplierList = new ArrayList();
-
             //Spawn
             spawnTimer = 400;
             enemySpawnLevel = 5;
-
             //Game Variables
             score = 0;
             lives = 3;
-
-            
             ship = new Ship();
             initializeLoc();
             base.Initialize();
@@ -142,7 +138,6 @@ namespace TwinStick {
             const int maxGridPoints = 2000;
             Vector2 gridSpacing = new Vector2((float)Math.Sqrt(screenWidth * screenHeight / maxGridPoints));
             grid = new Grid(new Rectangle((int)-80, (int)leftSideLoc.Y - 80, (int)(rightSideLoc.X - leftSideLoc.X), (int)(bottomSideLoc.Y - topSideLoc.Y) + 100), gridSpacing, starTexture);
-            
         }
 
         protected override void UnloadContent() {
@@ -210,364 +205,364 @@ namespace TwinStick {
             }
             #endregion
 
-                if (state == 1 && screenTransition == false) {
-                    #region //Ship Movement, Angle
-                    if (padState1.ThumbSticks.Left.X > 0.0f || padState1.ThumbSticks.Left.X < 0.0f ||
-                        padState1.ThumbSticks.Left.Y > 0.0f || padState1.ThumbSticks.Left.Y < 0.0f) {
-                        leftStick = padState1.ThumbSticks.Left;
-                        leftStickAngle = (float)Math.Atan2(-leftStick.Y, leftStick.X);
-                    }
-                    if (padState1.ThumbSticks.Left.X > 0.00f)
-                        ship.direction.X += padState1.ThumbSticks.Left.X * ship.shipAccelSpeed;
-                    if (padState1.ThumbSticks.Left.X < -0.00f)
-                        ship.direction.X += padState1.ThumbSticks.Left.X * ship.shipAccelSpeed;
-                    if (padState1.ThumbSticks.Left.Y > 0.00f)
-                        ship.direction.Y -= padState1.ThumbSticks.Left.Y * ship.shipAccelSpeed;
-                    if (padState1.ThumbSticks.Left.Y < -0.00f)
-                        ship.direction.Y -= padState1.ThumbSticks.Left.Y * ship.shipAccelSpeed;
-                    if (keyState.IsKeyDown(Keys.W))
-                        ship.direction.Y -= ship.shipAccelSpeed;
-                    if (keyState.IsKeyDown(Keys.A))
-                        ship.direction.X -= ship.shipAccelSpeed;
-                    if (keyState.IsKeyDown(Keys.S))
-                        ship.direction.Y += ship.shipAccelSpeed;
-                    if (keyState.IsKeyDown(Keys.D))
-                        ship.direction.X += ship.shipAccelSpeed;
+            if (state == 1 && screenTransition == false) {
+                #region //Ship Movement, Angle
+                if (padState1.ThumbSticks.Left.X > 0.0f || padState1.ThumbSticks.Left.X < 0.0f ||
+                    padState1.ThumbSticks.Left.Y > 0.0f || padState1.ThumbSticks.Left.Y < 0.0f) {
+                    leftStick = padState1.ThumbSticks.Left;
+                    leftStickAngle = (float)Math.Atan2(-leftStick.Y, leftStick.X);
+                }
+                if (padState1.ThumbSticks.Left.X > 0.00f)
+                    ship.direction.X += padState1.ThumbSticks.Left.X * ship.shipAccelSpeed;
+                if (padState1.ThumbSticks.Left.X < -0.00f)
+                    ship.direction.X += padState1.ThumbSticks.Left.X * ship.shipAccelSpeed;
+                if (padState1.ThumbSticks.Left.Y > 0.00f)
+                    ship.direction.Y -= padState1.ThumbSticks.Left.Y * ship.shipAccelSpeed;
+                if (padState1.ThumbSticks.Left.Y < -0.00f)
+                    ship.direction.Y -= padState1.ThumbSticks.Left.Y * ship.shipAccelSpeed;
+                if (keyState.IsKeyDown(Keys.W))
+                    ship.direction.Y -= ship.shipAccelSpeed;
+                if (keyState.IsKeyDown(Keys.A))
+                    ship.direction.X -= ship.shipAccelSpeed;
+                if (keyState.IsKeyDown(Keys.S))
+                    ship.direction.Y += ship.shipAccelSpeed;
+                if (keyState.IsKeyDown(Keys.D))
+                    ship.direction.X += ship.shipAccelSpeed;
 
-                    float diagSpeed = (ship.direction.X * ship.direction.X) + (ship.direction.Y * ship.direction.Y);
-                    if (diagSpeed > (ship.maxShipSpeed * ship.maxShipSpeed)) {
-                        float xNeg = ship.direction.X;
-                        float yNeg = ship.direction.Y;
-                        ship.direction.X = (float)Math.Sqrt((ship.direction.X * ship.direction.X * ship.maxShipSpeed * ship.maxShipSpeed) / diagSpeed);
-                        ship.direction.Y = (float)Math.Sqrt((ship.direction.Y * ship.direction.Y * ship.maxShipSpeed * ship.maxShipSpeed) / diagSpeed);
-                        if (xNeg < 0)
-                            ship.direction.X *= -1;
-                        if (yNeg < 0)
-                            ship.direction.Y *= -1;
-                    }
-
-                    //Border Collision  
-                    Boolean updateLocX = true;
-                    Boolean updateLocY = true;
-                    if (ship.location.X < ship.shipSize + leftSideLoc.X) {
-                        if (ship.direction.X < 0)
-                            updateLocX = false;
-                    }
-                    if (ship.location.X > rightSideLoc.X - ship.shipSize) {
-                        if (ship.direction.X > 0)
-                            updateLocX = false;
-                    }
-                    if (ship.location.Y < topSideLoc.Y + ship.shipSize) {
-                        if (ship.direction.Y < 0)
-                            updateLocY = false;
-                    }
-                    if (ship.location.Y > bottomSideLoc.Y - ship.shipSize) {
-                        if (ship.direction.Y > 0)
-                            updateLocY = false;
-                    }
-                    if (updateLocX) {
-                        ship.location.X += (float)(ship.direction.X / 1.5);
-                        leftSideLoc.X += -ship.direction.X / 2;
-                        rightSideLoc.X += -ship.direction.X / 2;
-                        topSideLoc.X += -ship.direction.X / 2;
-                        bottomSideLoc.X += -ship.direction.X / 2;
-                    }
-                    else
-                        ship.direction.X = 0;
-                    if (updateLocY) {
-                        ship.location.Y += (float)(ship.direction.Y / 1.5);
-                        leftSideLoc.Y += -ship.direction.Y / 2;
-                        rightSideLoc.Y += -ship.direction.Y / 2;
-                        topSideLoc.Y += -ship.direction.Y / 2;
-                        bottomSideLoc.Y += -ship.direction.Y / 2;
-                    }
-                    else
-                        ship.direction.Y = 0;
-
-                    //Momentum
-                    ship.direction.X *= (float).935;
-                    ship.direction.Y *= (float).935;
-                    #endregion
-
-                    #region //Bullet Creation
-
-                    rightStickAngle = (float)Math.Atan2(-padState1.ThumbSticks.Right.Y, padState1.ThumbSticks.Right.X);
-                    ship.rightStickDegrees = -rightStickAngle * (180 / Math.PI);
-                    /*if(keyState.IsKeyDown(Keys.Left) || keyState.IsKeyDown(Keys.Right) ||
-                        keyState.IsKeyDown(Keys.Down) || keyState.IsKeyDown(Keys.Up))*/
-                    if (padState1.ThumbSticks.Right.X > 0.00f || padState1.ThumbSticks.Right.X < -0.00f ||
-                        padState1.ThumbSticks.Right.Y > 0.00f || padState1.ThumbSticks.Right.Y < -0.00f) {
-                        if (ship.canFire) {
-                            Vector2 direction = padState1.ThumbSticks.Right;
-                            if (xThreeSixty == false) {
-                                int shotX = 0;
-                                int shotY = 0;
-                                if (keyState.IsKeyDown(Keys.Left))
-                                    shotX = -1;
-                                if (keyState.IsKeyDown(Keys.Right))
-                                    shotX = 1;
-                                if (keyState.IsKeyDown(Keys.Down))
-                                    shotY = -1;
-                                if (keyState.IsKeyDown(Keys.Up))
-                                    shotY = 1;
-                                direction.X = shotX;
-                                direction.Y = shotY;
-                            }
-
-                            Vector2 bulletLoc;
-                            Vector2 direction2;
-                            bulletLoc.X = ship.location.X + 20;
-                            bulletLoc.Y = ship.location.Y + 20;
-                            bulletList.Add(new Bullet(bulletLoc, direction, rightStickAngle, 400));
-                            float vLength = (float)Math.Sqrt((direction.X * direction.X) + (direction.Y * direction.Y));
-                            if (xThreeSixty) {   //Spread Shot                 
-                                double angleUp = rightStickAngle + .04;
-                                direction2.X = (float)Math.Cos(angleUp) * vLength;
-                                direction2.Y = (float)Math.Sin(angleUp) * -vLength;
-                                bulletList.Add(new Bullet(bulletLoc, direction2, angleUp, 300));
-                                double angleDown = rightStickAngle - .04;
-                                direction2.X = (float)Math.Cos(angleDown) * vLength;
-                                direction2.Y = (float)Math.Sin(angleDown) * -vLength;
-                                bulletList.Add(new Bullet(bulletLoc, direction2, angleDown, 300));
-                            }
-
-                            ship.canFire = false;
-                            //bulletSoundEffect.Play();
-                        }
-                    }
-
-                    ship.fireTime++;
-                    if (ship.fireTime > ship.fireFrequency) {
-                        ship.canFire = true;
-                        ship.fireTime = 0;
-                    }
-                    #endregion
-
-                    #region //Bullet Collisions
-                    for (int i = 0; i < bulletList.Count; i++) {
-                        bullet = (Bullet)bulletList[i];
-                        if (bullet.location.X < leftSideLoc.X || bullet.location.X > rightSideLoc.X ||
-                            bullet.location.Y < topSideLoc.Y || bullet.location.Y > bottomSideLoc.Y) {
-                            bulletList.RemoveAt(i);
-                        }
-                        bulletRectangle = new Rectangle((int)bullet.location.X, (int)bullet.location.Y, 40, 40);
-                        foreach (Enemy enemy in enemyList) {
-                            enemyRectangle = new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 55, 55);
-                            if (enemyRectangle.Intersects(bulletRectangle)) {
-                                generateEffect(new Vector2(enemy.location.X, enemy.location.Y), blueBoxTexture);
-                                bullet.alive = false;
-                                enemy.isAlive = false;
-                                score += 10 * multiplierTotal;
-                                deathSFX.Play();
-                                multiplierList.Add(new Multiplier(new Vector2(enemy.location.X, enemy.location.Y)));
-                                grid.ApplyExplosiveForce(100, new Vector2(enemy.location.X, enemy.location.Y), 35);
-                            }
-                        }
-                        bullet.update();
-                    }
-                    #endregion
-
-                    #region //Enemy Spawn
-                    if (spawnTimer % 200 == 0) {
-                        Random random = new Random();
-                        int RandX;
-                        int RandY;
-                        for (int y = 0; y < enemySpawnLevel; y++) {
-                            //spawnEffect.Play();
-                            RandX = random.Next(screenWidth);
-                            RandY = random.Next(screenHeight);
-                            if (RandX > ship.location.X + 250 || RandX < ship.location.X - 250 || RandY > ship.location.Y + 250 || RandY < ship.location.Y - 250)
-                                if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
-                                    enemyList.Add(new Chaser(new Vector2(RandX, RandY), chaserEnemyTexture));
-                                }
-                        }
-                        for (int y = 0; y < enemySpawnLevel / 10; y++) {
-                            RandX = random.Next(screenWidth);
-                            RandY = random.Next(screenHeight);
-                            if (RandX > ship.location.X + 150 || RandX < ship.location.X - 150 || RandY > ship.location.Y + 150 || RandY < ship.location.Y - 150)
-                                if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
-                                    enemyList.Add(new Duck(new Vector2(RandX, RandY), duckTexture));
-                                }
-                        }
-
-                        for (int y = 0; y < enemySpawnLevel / 10; y++) {
-                            RandX = random.Next(screenWidth) + (int)leftSideLoc.X - 50;
-                            RandY = 50;
-                            int RandB = random.Next(2);
-                            Boolean vertical = true;
-                            if (RandB == 1) {
-                                vertical = false;
-                                RandX = 10;
-                                RandY = (int)topSideLoc.Y + random.Next(screenHeight) - 50;
-                            }
-                            if (RandX > ship.location.X + 250 || RandX < ship.location.X - 250 || RandY > ship.location.Y + 250 || RandY < ship.location.Y - 250)
-                                if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
-                                    enemyList.Add(new Rocket(new Vector2(RandX, RandY), vertical, rocketTexture));
-                                }
-                        }
-                        for (int y = 0; y < enemySpawnLevel / 10; y++) {
-                            RandX = random.Next(screenWidth);
-                            RandY = random.Next(screenHeight);
-                            if (RandX > ship.location.X + 150 || RandX < ship.location.X - 150 || RandY > ship.location.Y + 150 || RandY < ship.location.Y - 150)
-                                if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
-                                    enemyList.Add(new Snake(new Vector2(RandX, RandY), snakeEnemyTexture));
-                                }
-                        }
-                    }
-                    spawnTimer++;
-                    if (spawnTimer > 700) {
-                        enemySpawnLevel += 4;
-                        spawnTimer = 0;
-                    }
-                    #endregion
-
-                    #region //Hit Detection(Death + Multiplier)
-                    Rectangle shipRectangle = new Rectangle((int)ship.location.X, (int)ship.location.Y, 50, 50);
-                    foreach (Enemy enemy in enemyList) {
-                        enemyRectangle = new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 20, 20);
-                        if (shipRectangle.Intersects(enemyRectangle)) {
-                            lives--;
-                            spawnTimer = 1;
-                            clearBlockList();
-                            initializeLoc();
-                            break;
-                        }
-                    }
-                    foreach (Multiplier multiplier in multiplierList) {
-                        Rectangle multiplyerRectangle = new Rectangle((int)multiplier.getLocation().X, (int)multiplier.getLocation().Y, 20, 20);
-                        if (shipRectangle.Intersects(multiplyerRectangle)) {
-                            multiplier.alive = false;
-                            multiplierTotal++;
-                        }
-                    }
-                    #endregion
-
-                    #region //Location Updates
-                    foreach (Enemy enemy in enemyList) {
-                        enemy.update(ship.location, ship.direction, leftSideLoc.X, topSideLoc.Y, rightSide.X, bottomSide.Y);
-                    }
-                    /* foreach (Star s in starList) {
-                         s.update(shipSpeed);
-                     }*/
-                    foreach (Multiplier p in multiplierList) {
-                        p.update(ship.direction);
-                    }
-                    for (int i = 0; i < bulletList.Count; i++) {
-                        Bullet b = (Bullet)bulletList[i];
-                        if (b.alive == false) {
-                            bulletList.RemoveAt(i);
-                        }
-                    }
-                    for (int i = 0; i < enemyList.Count; i++) {
-                        Enemy enemy = (Enemy)enemyList[i];
-                        if (enemy.isAlive == false) {
-                            enemyList.RemoveAt(i);
-                        }
-                    }
-                    for (int i = 0; i < multiplierList.Count; i++) {
-                        Multiplier m = (Multiplier)multiplierList[i];
-                        if (m.alive == false) {
-                            multiplierList.RemoveAt(i);
-                        }
-                    }
-                    updateParticles();
-                    //Border
-                    leftSide = new Rectangle((int)leftSideLoc.X, (int)leftSideLoc.Y, 3, screenHeight + 150);
-                    rightSide = new Rectangle((int)rightSideLoc.X, (int)rightSideLoc.Y, 3, screenHeight + 150);
-                    topSide = new Rectangle((int)topSideLoc.X, (int)topSideLoc.Y, screenWidth + 20, 3);
-                    bottomSide = new Rectangle((int)bottomSideLoc.X, (int)bottomSideLoc.Y, screenWidth + 20, 3);
-
-                    //Update Grid
-                    grid.Update();
-
-                    #endregion
-
-                    #region //State Transition Checks
-                    if ((keyState.IsKeyDown(Keys.Enter) && oldKeyState.IsKeyUp(Keys.Enter)) || (padState1.Buttons.A == ButtonState.Pressed && oldPadState1.Buttons.A == ButtonState.Released)) {
-                        state = 3;
-                        screenTransition = true;
-                        selectorLocation = 0;
-                        MediaPlayer.Pause();
-                    }
-                    if (lives == 0) {
-                        state = 2;
-                        MediaPlayer.Pause();
-                        for (int i = 0; i <= 4; i++) {
-                            if (score > highScores[i]) {
-                                highScores[i] = score;
-                                score = 0;
-                            }
-                        }
-                    }
-                    #endregion
+                float diagSpeed = (ship.direction.X * ship.direction.X) + (ship.direction.Y * ship.direction.Y);
+                if (diagSpeed > (ship.maxShipSpeed * ship.maxShipSpeed)) {
+                    float xNeg = ship.direction.X;
+                    float yNeg = ship.direction.Y;
+                    ship.direction.X = (float)Math.Sqrt((ship.direction.X * ship.direction.X * ship.maxShipSpeed * ship.maxShipSpeed) / diagSpeed);
+                    ship.direction.Y = (float)Math.Sqrt((ship.direction.Y * ship.direction.Y * ship.maxShipSpeed * ship.maxShipSpeed) / diagSpeed);
+                    if (xNeg < 0)
+                        ship.direction.X *= -1;
+                    if (yNeg < 0)
+                        ship.direction.Y *= -1;
                 }
 
-                #region //High Score Screen
-                if (state == 2 && screenTransition == false) {
-                    updateParticles();
-                    if ((keyState.IsKeyDown(Keys.Enter) && oldKeyState.IsKeyUp(Keys.Enter)) || (padState1.Buttons.A == ButtonState.Pressed && oldPadState1.Buttons.A == ButtonState.Released)) {
-                        state = 1;
-                        lives = 3;
-                        score = 0;
+                //Border Collision  
+                Boolean updateLocX = true;
+                Boolean updateLocY = true;
+                if (ship.location.X < ship.shipSize + leftSideLoc.X) {
+                    if (ship.direction.X < 0)
+                        updateLocX = false;
+                }
+                if (ship.location.X > rightSideLoc.X - ship.shipSize) {
+                    if (ship.direction.X > 0)
+                        updateLocX = false;
+                }
+                if (ship.location.Y < topSideLoc.Y + ship.shipSize) {
+                    if (ship.direction.Y < 0)
+                        updateLocY = false;
+                }
+                if (ship.location.Y > bottomSideLoc.Y - ship.shipSize) {
+                    if (ship.direction.Y > 0)
+                        updateLocY = false;
+                }
+                if (updateLocX) {
+                    ship.location.X += (float)(ship.direction.X / 1.5);
+                    leftSideLoc.X += -ship.direction.X / 2;
+                    rightSideLoc.X += -ship.direction.X / 2;
+                    topSideLoc.X += -ship.direction.X / 2;
+                    bottomSideLoc.X += -ship.direction.X / 2;
+                }
+                else
+                    ship.direction.X = 0;
+                if (updateLocY) {
+                    ship.location.Y += (float)(ship.direction.Y / 1.5);
+                    leftSideLoc.Y += -ship.direction.Y / 2;
+                    rightSideLoc.Y += -ship.direction.Y / 2;
+                    topSideLoc.Y += -ship.direction.Y / 2;
+                    bottomSideLoc.Y += -ship.direction.Y / 2;
+                }
+                else
+                    ship.direction.Y = 0;
+
+                //Momentum
+                ship.direction.X *= (float).935;
+                ship.direction.Y *= (float).935;
+                #endregion
+
+                #region //Bullet Creation
+
+                rightStickAngle = (float)Math.Atan2(-padState1.ThumbSticks.Right.Y, padState1.ThumbSticks.Right.X);
+                ship.rightStickDegrees = -rightStickAngle * (180 / Math.PI);
+                /*if(keyState.IsKeyDown(Keys.Left) || keyState.IsKeyDown(Keys.Right) ||
+                    keyState.IsKeyDown(Keys.Down) || keyState.IsKeyDown(Keys.Up))*/
+                if (padState1.ThumbSticks.Right.X > 0.00f || padState1.ThumbSticks.Right.X < -0.00f ||
+                    padState1.ThumbSticks.Right.Y > 0.00f || padState1.ThumbSticks.Right.Y < -0.00f) {
+                    if (ship.canFire) {
+                        Vector2 direction = padState1.ThumbSticks.Right;
+                        if (xThreeSixty == false) {
+                            int shotX = 0;
+                            int shotY = 0;
+                            if (keyState.IsKeyDown(Keys.Left))
+                                shotX = -1;
+                            if (keyState.IsKeyDown(Keys.Right))
+                                shotX = 1;
+                            if (keyState.IsKeyDown(Keys.Down))
+                                shotY = -1;
+                            if (keyState.IsKeyDown(Keys.Up))
+                                shotY = 1;
+                            direction.X = shotX;
+                            direction.Y = shotY;
+                        }
+
+                        Vector2 bulletLoc;
+                        Vector2 direction2;
+                        bulletLoc.X = ship.location.X + 20;
+                        bulletLoc.Y = ship.location.Y + 20;
+                        bulletList.Add(new Bullet(bulletLoc, direction, rightStickAngle, 400));
+                        float vLength = (float)Math.Sqrt((direction.X * direction.X) + (direction.Y * direction.Y));
+                        if (xThreeSixty) {   //Spread Shot                 
+                            double angleUp = rightStickAngle + .04;
+                            direction2.X = (float)Math.Cos(angleUp) * vLength;
+                            direction2.Y = (float)Math.Sin(angleUp) * -vLength;
+                            bulletList.Add(new Bullet(bulletLoc, direction2, angleUp, 300));
+                            double angleDown = rightStickAngle - .04;
+                            direction2.X = (float)Math.Cos(angleDown) * vLength;
+                            direction2.Y = (float)Math.Sin(angleDown) * -vLength;
+                            bulletList.Add(new Bullet(bulletLoc, direction2, angleDown, 300));
+                        }
+
+                        ship.canFire = false;
+                        //bulletSoundEffect.Play();
                     }
-                    if (padState1.Buttons.B == ButtonState.Pressed && oldPadState1.Buttons.B == ButtonState.Released) {
-                        state = 0;
-                        lives = 3;
-                        score = 0;
+                }
+
+                ship.fireTime++;
+                if (ship.fireTime > ship.fireFrequency) {
+                    ship.canFire = true;
+                    ship.fireTime = 0;
+                }
+                #endregion
+
+                #region //Bullet Collisions
+                for (int i = 0; i < bulletList.Count; i++) {
+                    bullet = (Bullet)bulletList[i];
+                    if (bullet.location.X < leftSideLoc.X || bullet.location.X > rightSideLoc.X ||
+                        bullet.location.Y < topSideLoc.Y || bullet.location.Y > bottomSideLoc.Y) {
+                        bulletList.RemoveAt(i);
+                    }
+                    bulletRectangle = new Rectangle((int)bullet.location.X, (int)bullet.location.Y, 40, 40);
+                    foreach (Enemy enemy in enemyList) {
+                        enemyRectangle = new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 55, 55);
+                        if (enemyRectangle.Intersects(bulletRectangle)) {
+                            generateEffect(new Vector2(enemy.location.X, enemy.location.Y), blueBoxTexture);
+                            bullet.alive = false;
+                            enemy.isAlive = false;
+                            score += 10 * multiplierTotal;
+                            deathSFX.Play();
+                            multiplierList.Add(new Multiplier(new Vector2(enemy.location.X, enemy.location.Y)));
+                            grid.ApplyExplosiveForce(100, new Vector2(enemy.location.X, enemy.location.Y), 35);
+                        }
+                    }
+                    bullet.update();
+                }
+                #endregion
+
+                #region //Enemy Spawn
+                if (spawnTimer % 200 == 0) {
+                    Random random = new Random();
+                    int RandX;
+                    int RandY;
+                    for (int y = 0; y < enemySpawnLevel; y++) {
+                        //spawnEffect.Play();
+                        RandX = random.Next(screenWidth);
+                        RandY = random.Next(screenHeight);
+                        if (RandX > ship.location.X + 250 || RandX < ship.location.X - 250 || RandY > ship.location.Y + 250 || RandY < ship.location.Y - 250)
+                            if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
+                                enemyList.Add(new Chaser(new Vector2(RandX, RandY), chaserEnemyTexture));
+                            }
+                    }
+                    for (int y = 0; y < enemySpawnLevel / 10; y++) {
+                        RandX = random.Next(screenWidth);
+                        RandY = random.Next(screenHeight);
+                        if (RandX > ship.location.X + 150 || RandX < ship.location.X - 150 || RandY > ship.location.Y + 150 || RandY < ship.location.Y - 150)
+                            if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
+                                enemyList.Add(new Duck(new Vector2(RandX, RandY), duckTexture));
+                            }
+                    }
+
+                    for (int y = 0; y < enemySpawnLevel / 10; y++) {
+                        RandX = random.Next(screenWidth) + (int)leftSideLoc.X - 50;
+                        RandY = 50;
+                        int RandB = random.Next(2);
+                        Boolean vertical = true;
+                        if (RandB == 1) {
+                            vertical = false;
+                            RandX = 10;
+                            RandY = (int)topSideLoc.Y + random.Next(screenHeight) - 50;
+                        }
+                        if (RandX > ship.location.X + 250 || RandX < ship.location.X - 250 || RandY > ship.location.Y + 250 || RandY < ship.location.Y - 250)
+                            if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
+                                enemyList.Add(new Rocket(new Vector2(RandX, RandY), vertical, rocketTexture));
+                            }
+                    }
+                    for (int y = 0; y < enemySpawnLevel / 10; y++) {
+                        RandX = random.Next(screenWidth);
+                        RandY = random.Next(screenHeight);
+                        if (RandX > ship.location.X + 150 || RandX < ship.location.X - 150 || RandY > ship.location.Y + 150 || RandY < ship.location.Y - 150)
+                            if (RandX > leftSideLoc.X + 30 && RandX < rightSideLoc.X - 30 && RandY > topSideLoc.Y + 30 && RandY < bottomSideLoc.Y - 30) {
+                                enemyList.Add(new Snake(new Vector2(RandX, RandY), snakeEnemyTexture));
+                            }
+                    }
+                }
+                spawnTimer++;
+                if (spawnTimer > 700) {
+                    enemySpawnLevel += 4;
+                    spawnTimer = 0;
+                }
+                #endregion
+
+                #region //Hit Detection(Death + Multiplier)
+                Rectangle shipRectangle = new Rectangle((int)ship.location.X, (int)ship.location.Y, 50, 50);
+                foreach (Enemy enemy in enemyList) {
+                    enemyRectangle = new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 20, 20);
+                    if (shipRectangle.Intersects(enemyRectangle)) {
+                        lives--;
+                        spawnTimer = 1;
+                        clearBlockList();
+                        initializeLoc();
+                        break;
+                    }
+                }
+                foreach (Multiplier multiplier in multiplierList) {
+                    Rectangle multiplyerRectangle = new Rectangle((int)multiplier.getLocation().X, (int)multiplier.getLocation().Y, 20, 20);
+                    if (shipRectangle.Intersects(multiplyerRectangle)) {
+                        multiplier.alive = false;
+                        multiplierTotal++;
                     }
                 }
                 #endregion
 
-                #region //Pause Screen
-                if (state == 3 && screenTransition == false) {
-                    if (selectorLocation == 0) {
-                        if ((keyState.IsKeyDown(Keys.Down) && oldKeyState.IsKeyUp(Keys.Down)) || (padState1.ThumbSticks.Left.Y < -.1 && oldPadState1.ThumbSticks.Left.Y > -.1)) {
-                            selectorLocation = 1;
+                #region //Location Updates
+                foreach (Enemy enemy in enemyList) {
+                    enemy.update(ship.location, ship.direction, leftSideLoc.X, topSideLoc.Y, rightSide.X, bottomSide.Y);
+                }
+                /* foreach (Star s in starList) {
+                     s.update(shipSpeed);
+                 }*/
+                foreach (Multiplier p in multiplierList) {
+                    p.update(ship.direction);
+                }
+                for (int i = 0; i < bulletList.Count; i++) {
+                    Bullet b = (Bullet)bulletList[i];
+                    if (b.alive == false) {
+                        bulletList.RemoveAt(i);
+                    }
+                }
+                for (int i = 0; i < enemyList.Count; i++) {
+                    Enemy enemy = (Enemy)enemyList[i];
+                    if (enemy.isAlive == false) {
+                        enemyList.RemoveAt(i);
+                    }
+                }
+                for (int i = 0; i < multiplierList.Count; i++) {
+                    Multiplier m = (Multiplier)multiplierList[i];
+                    if (m.alive == false) {
+                        multiplierList.RemoveAt(i);
+                    }
+                }
+                updateParticles();
+                //Border
+                leftSide = new Rectangle((int)leftSideLoc.X, (int)leftSideLoc.Y, 3, screenHeight + 150);
+                rightSide = new Rectangle((int)rightSideLoc.X, (int)rightSideLoc.Y, 3, screenHeight + 150);
+                topSide = new Rectangle((int)topSideLoc.X, (int)topSideLoc.Y, screenWidth + 20, 3);
+                bottomSide = new Rectangle((int)bottomSideLoc.X, (int)bottomSideLoc.Y, screenWidth + 20, 3);
+
+                //Update Grid
+                grid.Update();
+
+                #endregion
+
+                #region //State Transition Checks
+                if ((keyState.IsKeyDown(Keys.Enter) && oldKeyState.IsKeyUp(Keys.Enter)) || (padState1.Buttons.A == ButtonState.Pressed && oldPadState1.Buttons.A == ButtonState.Released)) {
+                    state = 3;
+                    screenTransition = true;
+                    selectorLocation = 0;
+                    MediaPlayer.Pause();
+                }
+                if (lives == 0) {
+                    state = 2;
+                    MediaPlayer.Pause();
+                    for (int i = 0; i <= 4; i++) {
+                        if (score > highScores[i]) {
+                            highScores[i] = score;
+                            score = 0;
+                        }
+                    }
+                }
+                #endregion
+            }
+
+            #region //High Score Screen
+            if (state == 2 && screenTransition == false) {
+                updateParticles();
+                if ((keyState.IsKeyDown(Keys.Enter) && oldKeyState.IsKeyUp(Keys.Enter)) || (padState1.Buttons.A == ButtonState.Pressed && oldPadState1.Buttons.A == ButtonState.Released)) {
+                    state = 1;
+                    lives = 3;
+                    score = 0;
+                }
+                if (padState1.Buttons.B == ButtonState.Pressed && oldPadState1.Buttons.B == ButtonState.Released) {
+                    state = 0;
+                    lives = 3;
+                    score = 0;
+                }
+            }
+            #endregion
+
+            #region //Pause Screen
+            if (state == 3 && screenTransition == false) {
+                if (selectorLocation == 0) {
+                    if ((keyState.IsKeyDown(Keys.Down) && oldKeyState.IsKeyUp(Keys.Down)) || (padState1.ThumbSticks.Left.Y < -.1 && oldPadState1.ThumbSticks.Left.Y > -.1)) {
+                        selectorLocation = 1;
+                        bulletSoundEffect.Play();
+                    }
+                }
+                else {
+                    if (selectorLocation == 1) {
+                        if ((keyState.IsKeyDown(Keys.Up) && oldKeyState.IsKeyUp(Keys.Up)) || (padState1.ThumbSticks.Left.Y > .1 && oldPadState1.ThumbSticks.Left.Y < .1)) {
+                            selectorLocation = 0;
                             bulletSoundEffect.Play();
                         }
-                    }
-                    else {
-                        if (selectorLocation == 1) {
-                            if ((keyState.IsKeyDown(Keys.Up) && oldKeyState.IsKeyUp(Keys.Up)) || (padState1.ThumbSticks.Left.Y > .1 && oldPadState1.ThumbSticks.Left.Y < .1)) {
-                                selectorLocation = 0;
+                        else {
+                            if ((keyState.IsKeyDown(Keys.Down) && oldKeyState.IsKeyUp(Keys.Down)) || (padState1.ThumbSticks.Left.Y < -.1 && oldPadState1.ThumbSticks.Left.Y > -.1)) {
+                                selectorLocation = 2;
                                 bulletSoundEffect.Play();
                             }
-                            else {
-                                if ((keyState.IsKeyDown(Keys.Down) && oldKeyState.IsKeyUp(Keys.Down)) || (padState1.ThumbSticks.Left.Y < -.1 && oldPadState1.ThumbSticks.Left.Y > -.1)) {
-                                    selectorLocation = 2;
-                                    bulletSoundEffect.Play();
-                                }
-                            }
                         }
-                        else
-                            if (selectorLocation == 2) {
-                                if ((keyState.IsKeyDown(Keys.Up) && oldKeyState.IsKeyUp(Keys.Up)) || (padState1.ThumbSticks.Left.Y > .1 && oldPadState1.ThumbSticks.Left.Y < .1)) {
-                                    selectorLocation = 1;
-                                    bulletSoundEffect.Play();
-                                }
-                            }
                     }
-
-                    if ((keyState.IsKeyDown(Keys.Enter) && oldKeyState.IsKeyUp(Keys.Enter)) || (padState1.Buttons.A == ButtonState.Pressed && oldPadState1.Buttons.A == ButtonState.Released)) {
-                        if (screenTransition == false) {
-                            if (selectorLocation == 0) {
-                                state = 1;
-                                MediaPlayer.Resume();
+                    else
+                        if (selectorLocation == 2) {
+                            if ((keyState.IsKeyDown(Keys.Up) && oldKeyState.IsKeyUp(Keys.Up)) || (padState1.ThumbSticks.Left.Y > .1 && oldPadState1.ThumbSticks.Left.Y < .1)) {
+                                selectorLocation = 1;
+                                bulletSoundEffect.Play();
                             }
-                            if (selectorLocation == 1)
-                                state = 2;
-                            if (selectorLocation == 2)
-                                state = 3;
-                            screenTransition = true;
-                            selectorLocation = 0;
                         }
+                }
+
+                if ((keyState.IsKeyDown(Keys.Enter) && oldKeyState.IsKeyUp(Keys.Enter)) || (padState1.Buttons.A == ButtonState.Pressed && oldPadState1.Buttons.A == ButtonState.Released)) {
+                    if (screenTransition == false) {
+                        if (selectorLocation == 0) {
+                            state = 1;
+                            MediaPlayer.Resume();
+                        }
+                        if (selectorLocation == 1)
+                            state = 2;
+                        if (selectorLocation == 2)
+                            state = 3;
+                        screenTransition = true;
+                        selectorLocation = 0;
                     }
                 }
-                #endregion
-                oldPadState1 = padState1;
-                oldKeyState = keyState;
-                base.Update(gameTime);
-            
+            }
+            #endregion
+            oldPadState1 = padState1;
+            oldKeyState = keyState;
+            base.Update(gameTime);
+
         }
 
         protected override void Draw(GameTime gameTime) {
@@ -577,11 +572,11 @@ namespace TwinStick {
 
             if (state == 0) {
                 //spriteBatch.Draw(introTexture, new Rectangle(0, 0, (int)screenWidth, (int)screenHeight), Color.White);
-                spriteBatch.DrawString(font1, "New Game", new Vector2((int)(screenWidth/ 2)-90, (int)(screenHeight * 4 / 7) ), new Color(0, 215, 255, 150));     
+                spriteBatch.DrawString(font1, "New Game", new Vector2((int)(screenWidth / 2) - 90, (int)(screenHeight * 4 / 7)), new Color(0, 215, 255, 150));
                 spriteBatch.DrawString(font1, "Leaderboards", new Vector2((int)(screenWidth / 2) - 90, (int)(screenHeight * 5 / 7)), new Color(0, 215, 255, 150));
                 spriteBatch.DrawString(font1, "Exit", new Vector2((int)(screenWidth / 2) - 90, (int)(screenHeight * 6 / 7)), new Color(0, 215, 255, 150));
-                spriteBatch.Draw(whiteBorderTexture, new Rectangle((int)((screenWidth * 1 / 2) - (300 / 2)), (int)((screenHeight * ((selectorLocation + 4)) / 7) -(75 / 2)),300, 75), null, Color.LimeGreen);
-            
+                spriteBatch.Draw(whiteBorderTexture, new Rectangle((int)((screenWidth * 1 / 2) - (300 / 2)), (int)((screenHeight * ((selectorLocation + 4)) / 7) - (75 / 2)), 300, 75), null, Color.LimeGreen);
+
             }
             if (state == 1 || state == 3) {
                 //Draw Grid
@@ -619,7 +614,7 @@ namespace TwinStick {
                                 }
                                 */
                 foreach (Enemy enemy in enemyList) {
-                    spriteBatch.Draw(enemy.enemyTexture, new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 45, 45), null, Color.White, enemy.getRotation, new Vector2(50, 50), SpriteEffects.None, 1);
+                    spriteBatch.Draw(enemy.enemyTexture, new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 50, 50), null, Color.White, enemy.getRotation, new Vector2(50, 50), SpriteEffects.None, 1);
                 }
                 foreach (Bullet b in bulletList) {
                     spriteBatch.Draw(bulletTexture, new Rectangle((int)b.location.X, (int)b.location.Y, 8, 8), null, Color.White, (float)b.angle, new Vector2(0, 0), SpriteEffects.None, 1);
@@ -632,7 +627,7 @@ namespace TwinStick {
                 foreach (Multiplier m in multiplierList) {
                     spriteBatch.Draw(blueBoxTexture, new Rectangle((int)m.getLocation().X, (int)m.getLocation().Y, 12, 12), Color.White);
                 }
-                spriteBatch.Draw(shipTexture, new Rectangle((int)ship.location.X, (int)ship.location.Y, 45, 45), null, Color.White, leftStickAngle, new Vector2(50, 50), SpriteEffects.None, 1);
+                spriteBatch.Draw(shipTexture, new Rectangle((int)ship.location.X, (int)ship.location.Y, 55, 55), null, Color.White, leftStickAngle, new Vector2(50, 50), SpriteEffects.None, 1);
                 //Score and Lives
                 string scoreStr = score.ToString();
                 spriteBatch.DrawString(font1, scoreStr, scorePos, new Color(0, 215, 255, 150));
@@ -795,6 +790,6 @@ namespace TwinStick {
             }
         }
     }
-    
+
 }
 

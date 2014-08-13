@@ -75,7 +75,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0lzqUmPWeqpJbwpeBmS4FXW23cs=</dsig:DigestValue>
+        <dsig:DigestValue>LCKcfnm9kur6YRBuZWiXGiHgwmY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -131,15 +131,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>9aX87KxNA+1tldSTirJKaMSOZeA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\gfx\planet.xnb" size="610387">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>4zf8JqnxvOCVLUO57CHNAkIQINc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\gfx\Purplebox.xnb" size="671">
@@ -250,67 +241,31 @@
       <dsig:DigestValue>LHb+TiI1SaD/XoZaT+acNNv912c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Music.wma" size="4371603">
+  <file name="Content\Shaders\BloomCombine.xnb" size="2560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>x/+d1QOucJ27eOW2lmUW1CtUapo=</dsig:DigestValue>
+      <dsig:DigestValue>HaznpQTRETB8668lyyXXuT/BrUc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Music.xnb" size="123">
+  <file name="Content\Shaders\BloomExtract.xnb" size="1492">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Gxjt+Mx4ZBIv0n8ql/nbPq2YQ6w=</dsig:DigestValue>
+      <dsig:DigestValue>vS8hPkmqKM+dbH9R9a6JtbQTGLg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Music2.wma" size="5194819">
+  <file name="Content\Shaders\GaussianBlur.xnb" size="3316">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1o9WInLMSImuhuv9nQKLlBdrUmA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Music2.xnb" size="124">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>criQG72qZeZQRJdYYTH2Ma2yXLQ=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Shaders\BloomCombine.xnb" size="2544">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>sUWPlN8t43DKz0NVl3Eq/HEJKJ0=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Shaders\BloomExtract.xnb" size="1476">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DVlGmfuN9q4eSKnnZZfBIM2Bcqc=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Shaders\GaussianBlur.xnb" size="3300">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SFZNNDMkuBofq6vIkr4TE58B1SM=</dsig:DigestValue>
+      <dsig:DigestValue>7dEFxMm6vxAhwVV9SEcIGg6dWow=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\spawn.xnb" size="313449">

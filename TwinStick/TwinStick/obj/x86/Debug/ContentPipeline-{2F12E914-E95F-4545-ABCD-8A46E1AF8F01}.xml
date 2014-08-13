@@ -2,41 +2,12 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Music.mp3</Source>
-      <Name>Music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music.xnb</Output>
-      <Extra>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music.wma</Extra>
-      <Time>2010-07-27T08:39:54-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Music2.mp3</Source>
-      <Name>Music2</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.xnb</Output>
-      <Extra>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Music2.wma</Extra>
-      <Time>2010-07-27T08:39:54-04:00</Time>
-    </Item>
-    <Item>
-      <Source>spawn.mp3</Source>
-      <Name>spawn</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb</Output>
-      <Time>2010-07-30T20:58:24-04:00</Time>
-    </Item>
-    <Item>
       <Source>gfx\Wanderer.PNG</Source>
       <Name>gfx\Wanderer</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Wanderer.xnb</Output>
       <Time>2010-07-27T08:39:54-04:00</Time>
     </Item>
     <Item>
@@ -45,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bluebox.xnb</Output>
       <Time>2010-07-27T08:39:54-04:00</Time>
     </Item>
     <Item>
@@ -54,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship.xnb</Output>
       <Time>2010-07-27T08:41:26-04:00</Time>
     </Item>
     <Item>
@@ -63,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\bullet.xnb</Output>
       <Time>2014-08-02T20:08:00.7037909-04:00</Time>
     </Item>
     <Item>
@@ -72,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Star.xnb</Output>
       <Time>2010-07-28T09:54:14-04:00</Time>
     </Item>
     <Item>
@@ -81,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Purplebox.xnb</Output>
       <Time>2010-07-28T10:14:54-04:00</Time>
     </Item>
     <Item>
@@ -90,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Duck.xnb</Output>
       <Time>2010-07-26T09:04:22-04:00</Time>
     </Item>
     <Item>
@@ -99,17 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\greenbox.xnb</Output>
       <Time>2010-07-28T10:15:09-04:00</Time>
-    </Item>
-    <Item>
-      <Source>gfx\planet.jpg</Source>
-      <Name>gfx\planet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\planet.xnb</Output>
-      <Time>2010-07-29T12:17:11-04:00</Time>
     </Item>
     <Item>
       <Source>gfx\redbox.PNG</Source>
@@ -117,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\redbox.xnb</Output>
       <Time>2010-07-28T10:15:45-04:00</Time>
     </Item>
     <Item>
@@ -126,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Background.xnb</Output>
       <Time>2010-07-30T15:00:32-04:00</Time>
     </Item>
     <Item>
@@ -135,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship2.xnb</Output>
       <Time>2010-08-03T19:50:52-04:00</Time>
     </Item>
     <Item>
@@ -144,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Rocket.xnb</Output>
       <Time>2010-08-03T20:12:09-04:00</Time>
     </Item>
     <Item>
@@ -153,7 +115,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\grunt.xnb</Output>
       <Time>2010-07-26T09:04:22-04:00</Time>
     </Item>
     <Item>
@@ -162,7 +124,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\Ship3.xnb</Output>
       <Time>2010-08-04T11:04:33-04:00</Time>
     </Item>
     <Item>
@@ -171,7 +133,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titan2.xnb</Output>
       <Time>2010-08-04T10:14:46-04:00</Time>
     </Item>
     <Item>
@@ -180,8 +142,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titlescreen.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\titlescreen.xnb</Output>
       <Time>2010-08-17T17:58:58-04:00</Time>
+    </Item>
+    <Item>
+      <Source>gfx\whiteBorder.png</Source>
+      <Name>gfx\whiteBorder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\whiteBorder.xnb</Output>
+      <Time>2014-08-02T18:27:04.9475627-04:00</Time>
     </Item>
     <Item>
       <Source>Laser.wav</Source>
@@ -189,8 +160,17 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\Laser.xnb</Output>
       <Time>2010-07-27T22:28:57-04:00</Time>
+    </Item>
+    <Item>
+      <Source>spawn.mp3</Source>
+      <Name>spawn</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\spawn.xnb</Output>
+      <Time>2010-07-30T20:58:24-04:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -198,7 +178,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
       <Time>2014-08-02T20:04:38.8008953-04:00</Time>
     </Item>
     <Item>
@@ -207,7 +187,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\BloomCombine.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\BloomCombine.xnb</Output>
       <Time>2014-07-29T19:21:00.1617793-04:00</Time>
     </Item>
     <Item>
@@ -216,7 +196,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\BloomExtract.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\BloomExtract.xnb</Output>
       <Time>2014-07-29T19:21:00.1657822-04:00</Time>
     </Item>
     <Item>
@@ -225,17 +205,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\GaussianBlur.xnb</Output>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\GaussianBlur.xnb</Output>
       <Time>2014-07-29T19:21:00.1687836-04:00</Time>
-    </Item>
-    <Item>
-      <Source>gfx\whiteBorder.png</Source>
-      <Name>gfx\whiteBorder</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\whiteBorder.xnb</Output>
-      <Time>2014-08-02T18:27:04.9475627-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -244,10 +215,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Theo\Dropbox\Games\TwinStick\TwinStick\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
