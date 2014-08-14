@@ -265,3 +265,4 @@ C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\obj\x86\Debug\TwinS
 C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.application
 C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.exe
 C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\obj\x86\Debug\TwinStick.pdb
+C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\whiteBox.xnb

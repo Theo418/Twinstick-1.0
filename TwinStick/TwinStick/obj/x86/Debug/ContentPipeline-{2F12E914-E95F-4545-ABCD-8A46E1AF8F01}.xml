@@ -208,6 +208,15 @@
       <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\Shaders\GaussianBlur.xnb</Output>
       <Time>2014-07-29T19:21:00.1687836-04:00</Time>
     </Item>
+    <Item>
+      <Source>gfx\whiteBox.png</Source>
+      <Name>gfx\whiteBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Theo\Documents\GitHub\Twinstick\TwinStick\TwinStick\bin\x86\Debug\Content\gfx\whiteBox.xnb</Output>
+      <Time>2014-08-13T20:07:53.1508436-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{2F12E914-E95F-4545-ABCD-8A46E1AF8F01}</ContentProjectGUID>

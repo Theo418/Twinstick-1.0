@@ -312,8 +312,11 @@ namespace TwinStick {
         Vector2 directionVal;
         Vector2 location;
         float rotationVal;
-        byte transVal = 255;
+        float transVal = 1;
         Texture2D tex;
+        public byte rColor;
+        public byte bColor;
+        public byte gColor;
 
         public ParticleObject(Texture2D t) {
             tex = t;
@@ -334,7 +337,7 @@ namespace TwinStick {
             get { return tex; }
         }
 
-        public byte transparency {
+        public float transparency {
             set { transVal = value; }
             get { return transVal; }
         }
@@ -358,9 +361,12 @@ namespace TwinStick {
         }
 
         public void updateSpeed() {
-            directionVal.X *= .98F;
-            directionVal.Y *= .98F;
-            transVal = 10;
+            if (lifeSpan < 250) {
+            directionVal.X *= .97F;
+            directionVal.Y *= .97F;
+            }
+            if ((lifeSpan < 100) || (directionVal.X + directionVal.Y < 3))
+              transVal -= .02f;
         }
     }
 
@@ -688,7 +694,7 @@ namespace TwinStick {
         }
         public static void DrawLine(this SpriteBatch spriteBatch, Vector2 start, Vector2 end, Color color, Texture2D tex, Vector2 leftWall, float thickness = 2f) {
             Vector2 delta = end - start;
-            spriteBatch.Draw(tex, start + leftWall, null, (color * .08f), delta.ToAngle(), new Vector2(0, 0.5f), new Vector2(delta.Length(), thickness), SpriteEffects.None, 0f);
+            spriteBatch.Draw(tex, start + leftWall, null, (color * .16f), delta.ToAngle(), new Vector2(0, 0.5f), new Vector2(delta.Length(), thickness), SpriteEffects.None, 0f);
 
         }
 

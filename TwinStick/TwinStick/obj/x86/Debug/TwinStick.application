@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TwinStick.exe.manifest" size="14248">
+    <dependentAssembly dependencyType="install" codebase="TwinStick.exe.manifest" size="14631">
       <assemblyIdentity name="TwinStick.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>u/kCG9Jlh4f1EEBcyMPLynZwTOo=</dsig:DigestValue>
+        <dsig:DigestValue>OviwJR95tj67setqqX3lyg3NPV4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

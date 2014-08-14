@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TwinStick.exe" size="45056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TwinStick.exe" size="46592">
       <assemblyIdentity name="TwinStick" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>LCKcfnm9kur6YRBuZWiXGiHgwmY=</dsig:DigestValue>
+        <dsig:DigestValue>F1P4vFuF9oDe9TcQyXEFOFJDV+4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -230,6 +230,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>k+pE2RObdMzwqXz7P4OvC5gbkz4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\gfx\whiteBox.xnb" size="587">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>joAZ33woFeKxaRfj16HU9qhQOpk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Laser.xnb" size="44069">

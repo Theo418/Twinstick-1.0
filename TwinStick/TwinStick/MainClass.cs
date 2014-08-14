@@ -39,6 +39,7 @@ namespace TwinStick {
         float leftStickAngle;
         float rightStickAngle;
         int selectorLocation = 0;
+        int particleColor = 0;
 
         ArrayList bulletList;
 
@@ -67,6 +68,7 @@ namespace TwinStick {
         Texture2D rocketTexture;
         Texture2D introTexture;
         Texture2D whiteBorderTexture;
+        Texture2D whiteBoxTexture;
 
         Boolean xThreeSixty = true;
         SpriteFont font1;
@@ -89,7 +91,7 @@ namespace TwinStick {
             Content.RootDirectory = "Content";
             bloom = new BloomComponent(this);
             Components.Add(bloom);
-            bloom.Settings = new BloomSettings(null, 0.25f, 4, 2, 1, 1.5f, 1);
+            bloom.Settings = new BloomSettings(null, .25f, 4, 4, 1, 1.5f, 1); //new BloomSettings(null, 0.25f, 4, 2, 1, 1.5f, 1);
         }
 
         protected override void Initialize() {
@@ -131,13 +133,14 @@ namespace TwinStick {
             introTexture = Content.Load<Texture2D>(@"gfx/titleScreen");
             whiteBorderTexture = Content.Load<Texture2D>(@"gfx/whiteBorder");
             snakeEnemyTexture = Content.Load<Texture2D>(@"gfx/grunt");
+            whiteBoxTexture = Content.Load<Texture2D>(@"gfx/whiteBox");
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font1 = Content.Load<SpriteFont>("SpriteFont1");
             scorePos = new Vector2(screenWidth - 100, 50);
             //Grid
-            const int maxGridPoints = 2000;
+            const int maxGridPoints = 300;
             Vector2 gridSpacing = new Vector2((float)Math.Sqrt(screenWidth * screenHeight / maxGridPoints));
-            grid = new Grid(new Rectangle((int)-80, (int)leftSideLoc.Y - 80, (int)(rightSideLoc.X - leftSideLoc.X), (int)(bottomSideLoc.Y - topSideLoc.Y) + 100), gridSpacing, starTexture);
+            grid = new Grid(new Rectangle((int)-80, (int)leftSideLoc.Y, (int)(rightSideLoc.X - leftSideLoc.X), (int)(bottomSideLoc.Y - topSideLoc.Y)), gridSpacing, starTexture);
         }
 
         protected override void UnloadContent() {
@@ -495,6 +498,12 @@ namespace TwinStick {
                     }
                 }
                 #endregion
+               //Particle Color
+                if (spawnTimer % 80 == 0) {
+                    particleColor++;
+                    if (particleColor > 5)
+                        particleColor = 1;
+                }
             }
 
             #region //High Score Screen
@@ -569,50 +578,19 @@ namespace TwinStick {
             bloom.BeginDraw();
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();//SpriteSortMode.Texture, BlendState.Additive
-
+            spriteBatch.Draw(whiteBoxTexture, new Rectangle((int)(0), (int)0, screenWidth, screenHeight), null, Color.White * .1f);
             if (state == 0) {
                 //spriteBatch.Draw(introTexture, new Rectangle(0, 0, (int)screenWidth, (int)screenHeight), Color.White);
                 spriteBatch.DrawString(font1, "New Game", new Vector2((int)(screenWidth / 2) - 90, (int)(screenHeight * 4 / 7)), new Color(0, 215, 255, 150));
                 spriteBatch.DrawString(font1, "Leaderboards", new Vector2((int)(screenWidth / 2) - 90, (int)(screenHeight * 5 / 7)), new Color(0, 215, 255, 150));
                 spriteBatch.DrawString(font1, "Exit", new Vector2((int)(screenWidth / 2) - 90, (int)(screenHeight * 6 / 7)), new Color(0, 215, 255, 150));
                 spriteBatch.Draw(whiteBorderTexture, new Rectangle((int)((screenWidth * 1 / 2) - (300 / 2)), (int)((screenHeight * ((selectorLocation + 4)) / 7) - (75 / 2)), 300, 75), null, Color.LimeGreen);
-
             }
+            
             if (state == 1 || state == 3) {
                 //Draw Grid
                 grid.Draw(spriteBatch, leftSideLoc);
-                //Draw Star
-                /*foreach (Star s in starList) {
-                    //spriteBatch.Draw(starTexture, new Rectangle((int)s.getScrollSpeed().X, (int)s.getScrollSpeed().Y, 3, 3), null, new Color(255, 255, 255, 100), 0, new Vector2(5, 5), SpriteEffects.None, 1);
-                }*/
-                //spriteBatch.Draw(worldTexture, new Rectangle((int)planetPos.X, (int)planetPos.Y, (int)(340 * .75), (int)(450 * .75)), Color.White);          
-                //Draw Block Enemies
-                /*foreach (Chaser c in chaserList)
-                {
-                    spriteBatch.Draw(chaserEnemyTexture, new Rectangle((int)c.location.X, (int)c.location.Y, 55, 55), null, Color.White, c.rotation, new Vector2(50, 50), SpriteEffects.None, 1);
-                }
-
-                //Draw Ducks
-                foreach (Duck d in duckList) {
-                    spriteBatch.Draw(duckTexture, new Rectangle((int)d.location.X, (int)d.location.Y, 55, 55), null, Color.White, d.rotation, new Vector2(50, 50), SpriteEffects.None, 1);
-                }*/
-                /*
-                                //Draw Rockets
-                                foreach (Rocket r in rocketList)
-                                {
-                                    spriteBatch.Draw(rocketTexture, new Rectangle((int)r.position.X, (int)r.position.Y, 45, 45), Color.White);
-                                }
-
-                                //Draw Snake
-                                foreach (Snake s in snakeList)
-                                {
-                                    spriteBatch.Draw(snakeEnemyTexture, new Rectangle((int)s.position.X, (int)s.position.Y, 55, 55), null, Color.White, 0, new Vector2(50, 50), SpriteEffects.None, 1);
-                                    for (int x = 0; x < s.snakeTails.Length - 1; x++)
-                                    {
-                                        spriteBatch.Draw(snakeEnemyTexture, new Rectangle((int)s.snakeTails[x].X, (int)s.snakeTails[x].Y, 25, 25), null, Color.White, 0, new Vector2(50, 50), SpriteEffects.None, 1);
-                                    }
-                                }
-                                */
+                
                 foreach (Enemy enemy in enemyList) {
                     spriteBatch.Draw(enemy.enemyTexture, new Rectangle((int)enemy.location.X, (int)enemy.location.Y, 50, 50), null, Color.White, enemy.getRotation, new Vector2(50, 50), SpriteEffects.None, 1);
                 }
@@ -621,13 +599,15 @@ namespace TwinStick {
                     grid.ApplyExplosiveForce(5, b.location, 10);
                 }
                 foreach (ParticleObject p in particleList) {
-                    spriteBatch.Draw(blueBoxTexture, new Rectangle((int)p.getLocation().X, (int)p.getLocation().Y, 2, 10), null, new Color(255, 255, 255, (byte)p.transparency), p.rotation, new Vector2(5, 5), SpriteEffects.None, 1);
-                    //p.texture
+                   spriteBatch.Draw(whiteBoxTexture, new Rectangle((int)p.getLocation().X, (int)p.getLocation().Y, 4, 12), null,( new Color(p.rColor,p.gColor,p.bColor) * (p.transparency)), p.rotation, new Vector2(5, 5), SpriteEffects.None, 1);
+                   spriteBatch.Draw(whiteBoxTexture, new Rectangle((int)p.getLocation().X, (int)p.getLocation().Y, 2, 8), null, (Color.White) * (p.transparency) * .8f, p.rotation, new Vector2(5, 5), SpriteEffects.None, 1);
+                    
                 }
                 foreach (Multiplier m in multiplierList) {
                     spriteBatch.Draw(blueBoxTexture, new Rectangle((int)m.getLocation().X, (int)m.getLocation().Y, 12, 12), Color.White);
                 }
                 spriteBatch.Draw(shipTexture, new Rectangle((int)ship.location.X, (int)ship.location.Y, 55, 55), null, Color.White, leftStickAngle, new Vector2(50, 50), SpriteEffects.None, 1);
+                
                 //Score and Lives
                 string scoreStr = score.ToString();
                 spriteBatch.DrawString(font1, scoreStr, scorePos, new Color(0, 215, 255, 150));
@@ -646,6 +626,7 @@ namespace TwinStick {
                 spriteBatch.Draw(blueBoxTexture, new Rectangle((int)rightSideLoc.X + outerEdge, (int)rightSideLoc.Y - outerEdge, 3, screenHeight + 150 + 2 * outerEdge), Color.White);
                 spriteBatch.Draw(blueBoxTexture, new Rectangle((int)topSideLoc.X - outerEdge, (int)topSideLoc.Y - outerEdge, screenWidth + 20 + 2 * outerEdge, 3), Color.White);
                 spriteBatch.Draw(blueBoxTexture, new Rectangle((int)bottomSideLoc.X - outerEdge, (int)bottomSideLoc.Y + outerEdge, screenWidth + 20 + 2 * outerEdge, 3), Color.White);
+                //High Score Border
                 if (state == 3) {
                     spriteBatch.Draw(blueBoxTexture, new Rectangle((int)((screenWidth * 1 / 2) - (300 / 2)), (int)((screenHeight * 7 / 10) - (75 / 2)), 300, 75), null, Color.White);
                     spriteBatch.Draw(blueBoxTexture, new Rectangle((int)((screenWidth * 1 / 2) - (300 / 2)), (int)((screenHeight * 8 / 10) - (75 / 2)), 300, 75), null, Color.White);
@@ -728,11 +709,60 @@ namespace TwinStick {
 
         protected void generateEffect(Vector2 loc, Texture2D tex) {
             Random r = new Random();
-            int numOfP = r.Next(160) + 40;
+            int numOfP = r.Next(120) + 40;
+            int rColor = 0;
+            int gColor = 0;
+            int bColor = 0;
+            
+
+            
+            if (particleColor == 1) { //Green
+                rColor = (byte)57;
+                gColor = (byte)255;
+                bColor = (byte)20;
+            }
+            if (particleColor == 2) { //lightBlue
+                rColor = (byte)0;
+                gColor = (byte)191;
+                bColor = (byte)255;
+            }
+            if (particleColor == 3) { //blue
+                rColor = (byte)103;
+                gColor = (byte)200;
+                bColor = (byte)255;
+            }
+            if (particleColor == 4) { //purple
+                rColor = (byte)153;
+                gColor = (byte)60;
+                bColor = (byte)243;
+            }
+            if (particleColor == 5) { //pink
+                rColor = (byte)255;
+                gColor = (byte)0;
+                bColor = (byte)255;
+            }
+            if (particleColor == 6) { //red
+                rColor = (byte)254;
+                gColor = (byte)0;
+                bColor = (byte)1;
+            }
+            if (particleColor == 7) { //orange
+                rColor = (byte)255;
+                gColor = (byte)65;
+                bColor = (byte)5;
+            }
+            if (particleColor == 8) { //yellow
+                rColor = (byte)255;
+                gColor = (byte)255;
+                bColor = (byte)0;
+            }
             for (int j = 0; j < numOfP; j++) {
                 ParticleObject particle;
                 particle = new ParticleObject(tex);
                 particle.setLocation(new Vector2(loc.X, loc.Y));
+                particle.rColor = (byte)rColor;
+                particle.gColor = (byte)gColor;
+                particle.bColor = (byte)bColor;
                 int x = r.Next(78);
                 double realX = (float)((x * .12));
                 int y = r.Next(78);
@@ -760,26 +790,26 @@ namespace TwinStick {
                 ParticleObject p = (ParticleObject)particleList[i];
                 float x = p.getLocation().X + p.direction.X - ship.direction.X / 2;
                 float y = p.getLocation().Y + p.direction.Y - ship.direction.Y / 2;
-                /*if (x < leftSideLoc.X)
+                if (x < leftSideLoc.X + 2)
                 {
-                    p.setDirection(new Vector2(p.getDirection().X * -1, p.getDirection().Y));
+                    p.direction = new Vector2(p.direction.X * -1, p.direction.Y);
                     x = leftSideLoc.X + 3;
                 }
-                if (x > rightSideLoc.X)
+                if (x > rightSideLoc.X -2)
                 {
-                    p.setDirection(new Vector2(p.getDirection().X * -1, p.getDirection().Y));
+                    p.direction = new Vector2(p.direction.X * -1, p.direction.Y);
                     x = rightSideLoc.X - 1;
                 }
-                if (y < topSideLoc.Y)
+                if (y < topSideLoc.Y + 2)
                 {
-                    p.setDirection(new Vector2(p.getDirection().X, p.getDirection().Y * -1));
+                    p.direction = new Vector2(p.direction.X, p.direction.Y * -1);
                     y = topSideLoc.Y + 3;
                 }
-                if (y > bottomSideLoc.Y)
+                if (y > bottomSideLoc.Y - 2)
                 {
-                    p.setDirection(new Vector2(p.getDirection().X, p.getDirection().Y * -1));
+                    p.direction = new Vector2(p.direction.X, p.direction.Y * -1);
                     y = bottomSideLoc.Y - 1;
-                }*/
+                }
                 p.updateSpeed();
                 p.setLocation(new Vector2(x, y));
                 int life = p.getLifeSpan();
@@ -793,3 +823,36 @@ namespace TwinStick {
 
 }
 
+
+//Draw Star
+/*foreach (Star s in starList) {
+    //spriteBatch.Draw(starTexture, new Rectangle((int)s.getScrollSpeed().X, (int)s.getScrollSpeed().Y, 3, 3), null, new Color(255, 255, 255, 100), 0, new Vector2(5, 5), SpriteEffects.None, 1);
+}*/
+//spriteBatch.Draw(worldTexture, new Rectangle((int)planetPos.X, (int)planetPos.Y, (int)(340 * .75), (int)(450 * .75)), Color.White);          
+//Draw Block Enemies
+/*foreach (Chaser c in chaserList)
+{
+    spriteBatch.Draw(chaserEnemyTexture, new Rectangle((int)c.location.X, (int)c.location.Y, 55, 55), null, Color.White, c.rotation, new Vector2(50, 50), SpriteEffects.None, 1);
+}
+
+//Draw Ducks
+foreach (Duck d in duckList) {
+    spriteBatch.Draw(duckTexture, new Rectangle((int)d.location.X, (int)d.location.Y, 55, 55), null, Color.White, d.rotation, new Vector2(50, 50), SpriteEffects.None, 1);
+}*/
+/*
+                //Draw Rockets
+                foreach (Rocket r in rocketList)
+                {
+                    spriteBatch.Draw(rocketTexture, new Rectangle((int)r.position.X, (int)r.position.Y, 45, 45), Color.White);
+                }
+
+                //Draw Snake
+                foreach (Snake s in snakeList)
+                {
+                    spriteBatch.Draw(snakeEnemyTexture, new Rectangle((int)s.position.X, (int)s.position.Y, 55, 55), null, Color.White, 0, new Vector2(50, 50), SpriteEffects.None, 1);
+                    for (int x = 0; x < s.snakeTails.Length - 1; x++)
+                    {
+                        spriteBatch.Draw(snakeEnemyTexture, new Rectangle((int)s.snakeTails[x].X, (int)s.snakeTails[x].Y, 25, 25), null, Color.White, 0, new Vector2(50, 50), SpriteEffects.None, 1);
+                    }
+                }
+                */
